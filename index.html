@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hành trình 30 năm tìm đường cứu nước của Bác Hồ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <script src="data.js"></script>
+    <script src="line.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+        
+        #map {
+            width: 100%;
+            height: 92%;
+            position: absolute;
+            Z-index: 1;
+        }
+        
+        #chu_giai {
+            position: absolute;
+            z-index: 2
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pos-f-t">
+        <div class="collapse show" id="navbarToggleExternalContent">
+            <div style="color: #cecec5; font-family: serif; font-size: 2.4vh; font-weight: bold" class="bg-dark  p-4">
+                <div class="media">
+                    <img style="width: 30vh" class="mr-3" src="https://baotanghochiminh.vn/pic/News/images/B%E1%BA%A3o%20t%C3%A0ng%20HCM%20n%C4%83m%202021/Th%C3%A1ng%207/Thumbnails035220160552223--NguyenAiQuoc2.jpg" alt="Generic placeholder image">
+                    <div class="media-body">
+                        <p style="font-style: italic;"> Một sớm đặt chân về biên giới <br>Bác ứa lệ nhìn dải đất quê <br>Khi Bác cúi hôn vầng đất mẹ <br>Là lúc mùa xuân xứ sở về. <br> (Bác về) <br></p>
+                    </div>
+                </div>
+                <br>Sinh ra, lớn lên trong một gia đình nhà nho yêu nước, nơi quê hương giàu truyền thống cách mạng, chứng kiến bao cảnh đau thương nước mất, nhà tan, Nguyễn Tất Thành ra đi tìm đường cứu nước, cứu dân khi mới 21 tuổi. Từ lúc còn nhỏ,
+                Người sớm được tiếp cận với các tư tưởng lớn của phương Đông, hấp thụ vốn văn hóa truyền thống của dân tộc, Hán học và bước đầu tiếp xúc với văn hóa phương Tây. Vốn có tư chất thông minh, tinh thần ham học hỏi, khả năng tư duy độc lập,
+                tính ham hiểu biết và nhạy cảm với cái mới, Người bị lôi cuốn bởi khẩu hiệu “Tự do, bình đẳng, bác ái” và thôi thúc bởi ý định tìm hiểu “cái gì ẩn dấu sau” những từ đẹp đẽ đó ở chính nước sinh ra khẩu hiệu đó. Những tư tưởng tiến bộ của
+                cuộc cách mạng ở Pháp năm 1789, thành tựu văn minh, tiến bộ của nhân loại ở Pháp và các nước châu Âu khác đã thúc đẩy Người muốn đến tận nơi tìm hiểu. Đó chính là những lý do Nguyễn Tất Thành quyết định chọn nước Pháp, chọn châu Âu làm
+                điểm đến đầu tiên trong cuộc hành trình đi tìm đường cứu nước năm 1911. Chính cuộc hành trình đầy gian nan, vất vả ấy đã giúp Người tìm đến với chủ nghĩa Mác- Lênin như một lẽ tất yếu lịch sử và nhận ra ở đó con đường đấu tranh giải phóng
+                dân tộc, giải phóng giai cấp và giải phóng con người. <br>Hành trang ban đầu của Nguyễn Tất Thành khi ra nước ngoài là vốn tri thức về văn hóa phương Đông và phương Tây, lòng yêu nước nhiệt thành, tiếp thu có chọn lọc con đường cứu nước
+                của các nhà yêu nước lớp trước và một dự định lớn lao, đó là “xem nước Pháp và các nước khác, sau khi xem xét họ làm như thế nào, tôi sẽ trở về giúp đồng bào ta” đó là dự định tìm con đường cứu nước, cứu dân. <br>Có thể nói, đầu thế kỷ
+                XX, Hồ Chí Minh là một trong số rất ít các nhà cách mạng đương thời có điều kiện đi nhiều (do làm bồi tàu, thủy thủ), có một vốn hiểu biết khá tường tận về chủ nghĩa đế quốc và hệ thống thuộc địa của chúng. Gần 10 năm, vừa lao động kiếm
+                sống, vừa tiến hành khảo sát thực tiễn nhiều nước tư bản và các nước thuộc địa, khảo sát các cuộc cách mạng ở các nước Pháp, Anh, Mỹ… Nguyễn Tất Thành đã có nhận thức quan trọng là: Cách mạng tư sản (CMTS) là những cuộc cách mạng vĩ đại,
+                nhưng là những cuộc cách mạng chưa đến nơi. Nó đã phá tan gông xiềng phong kiến cùng những luật lệ hà khắc và những ràng buộc vô lý để giải phóng sức lao động của con người. CMTS dựng lên một chế độ mới tiến bộ hơn xã hội phong kiến. Nhưng
+                cách mạng xong rồi dân chúng vẫn khổ, vẫn bị áp bức, bóc lột và vẫn ấp ủ mong muốn làm cách mạng. Từ đó, Người đi tới kết luận, chúng ta đổ xương máu để làm cách mạng thì không đi theo con đường cách mạng này. Nguyễn Tất Thành đã tìm ra
+                những mặt trái của xã hội phương Tây, nhận ra “ Ở đâu cũng có người nghèo khổ như xứ sở mình” do ách áp bức, bóc lột dã man, vô nhân đạo của bọn thống trị. Điều đó đã giúp Người có một nhận thức quan trọng: Nhân dân lao động trên toàn
+                thế giới cần đoàn kết lại để đấu tranh chống kẻ thù chung là giai cấp thống trị; cùng nhau thực hiện nguyện vọng chung là độc lập, tự do.</div>
+
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+    </div>
+
+    <div id="map"></div>
+    <div id="chu_giai">
+        <img style="width:20vh; margin-top: 5vh; margin-left: 8vh" src="chu_giai.png">
+    </div>
+
+
+
+    <script>
+        var map = L.map('map').setView([28.346011, 32.871094], 3);
+
+        var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+
+        //Dom data
+        data_style = L.icon({
+            iconUrl: 'icon_star.png',
+            iconSize: [40.5, 53.3],
+            iconAnchor: [12, 41],
+            // popupAnchor: [1, -34],
+            // shadowSize: [41, 41]
+        });
+
+        data_control = L.geoJSON(data, {
+            pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {
+                    icon: data_style
+                })
+            },
+            onEachFeature: function(feature, marker) {
+                marker.bindPopup(
+                    feature.properties.noi_dung
+                ).openPopup();
+            }
+        }).addTo(map);
+
+        var geoJsonLayer = L.geoJson(line, {
+            onEachFeature: function(feature, layer) {
+                if (layer instanceof L.Polyline) {
+                    layer.setStyle({
+                        'color': feature.properties.color,
+                        'dashArray': feature.properties.dashArray,
+                        'lineJoin': feature.properties.lineJoin,
+                        // "dashArray": "2,15",
+                        // "lineJoin": "round"
+                    });
+                }
+            }
+        }).addTo(map);
+
+
+
+        popup = L.popup();
+
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent('<div class="text-center"><strong>' + 'Tọa độ được chọn' + '<br>' + e.latlng.toString() + '</strong></div>')
+                .openOn(map);
+        }
+        map.on('click', onMapClick);
+    </script>
+
+</body>
+
+</html>
